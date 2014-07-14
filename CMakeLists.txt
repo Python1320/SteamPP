@@ -10,12 +10,13 @@ find_package(LibArchive REQUIRED)
 set(STEAMKIT $ENV{SteamRE} CACHE PATH "Where you cloned SteamKit")
 set(PROTOBUF_IMPORT_DIRS ${STEAMKIT}/Resources/Protobufs)
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS
+	${PROTOBUF_IMPORT_DIRS}/steamclient/steammessages_clientserver_2.proto
 	${PROTOBUF_IMPORT_DIRS}/steamclient/steammessages_clientserver.proto
 	${PROTOBUF_IMPORT_DIRS}/steamclient/steammessages_base.proto
 	${PROTOBUF_IMPORT_DIRS}/steamclient/encrypted_app_ticket.proto
 )
 
-set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "-std=c++11 -fpermissive ${CMAKE_CXX_FLAGS}")
 
 include_directories(
 	${PROTOBUF_INCLUDE_DIRS}
