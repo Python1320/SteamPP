@@ -193,9 +193,9 @@ namespace Steam {
 		
 		std::function<void(SteamID room, SteamID chatter, const char* message)> onChatMsg;
 		
-		std::function<void(SteamID user, const char* message)> onPrivateMsg;
+		std::function<void(SteamID user, const char* message, bool relaying)> onPrivateMsg;
 		
-		std::function<void(SteamID user)> onTyping;
+		std::function<void(SteamID user, bool relaying)> onTyping;
 		
 		std::function<void(
 			bool incremental,
