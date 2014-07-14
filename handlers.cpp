@@ -324,5 +324,13 @@ void SteamClient::HandleMessage(EMsg emsg, const unsigned char* data, std::size_
 		}
 		
 		break;
+	default:
+		{
+			if (!onUnhandledMessage)
+				return;
+			
+			onUnhandledMessage(emsg, data, length);
+
+		}
 	}
 }

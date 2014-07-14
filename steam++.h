@@ -203,6 +203,7 @@ namespace Steam {
 			std::map<SteamID, EClanRelationship> &groups
 		)> onRelationships;
 		
+		std::function<void(EMsg emsg, const unsigned char* data, std::size_t length)> onUnhandledMessage;
 		
 		/**
 		 * Call this after the encryption handshake. @a steamID is only needed if you are logging into a non-default instance.

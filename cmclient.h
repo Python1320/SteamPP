@@ -3,6 +3,7 @@
 #include "steam++.h"
 #include "steam_language/steam_language_internal.h"
 #include "steammessages_clientserver.pb.h"
+#include "steammessages_clientserver_2.pb.h"
 
 extern const char* MAGIC;
 extern std::uint32_t PROTO_MASK;
